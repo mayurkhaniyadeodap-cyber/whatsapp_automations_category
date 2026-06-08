@@ -26,112 +26,55 @@ You are a support classifier.
 
 Choose ONLY one category and subcategory.
 
-# Categories:
-
-# Payment Issue
-
-# Help with Order
-# - Shipment Tracking
-# - Delivery Related
-
-# Delivered Item Related
-# - Damaged Item
-# - Defective Item
-# - Quality Issue
-# - Missing Item
-# - Wrong Item
-# - Quantity Issue
-# - Other Issue
-
-# Make Changes to Order
-# - Update Address / Phone
-# - Add / Update Items
-# - Add / Update GST Details
-
-# Offer / Discount Related
-
-# Website / App Related
-# - App Crashing
-# - Cart Not Saving Items
-# - Saved Address Not Found
-# - Browser & Device Support
-# - Checkout Page Not Load
-
-# Account Related
-# - Password Reset
-# - Update Phone/Email
-# - Delete Account
-# - Data & Privacy Security
-# - OTP / Notifications Not Received
-# - View Order History
-# - Create New Account
-
 Categories:
 
 Payment Issue
 
 Help with Order
-- Shipment Tracking
+- Shipment Tracking  
 
 Delivery Related
-- Delayed Delivery
-- Undelivered Issue
-- Out For Delivery Issue
-- Cancelled Delivery(RTO)
-- Urgent Request
+- Delayed Delivery 
+- Undelivered Issue 
+- Out For Delivery Issue 
+- Cancelled Delivery(RTO) 
+- Urgent Request 
 - Delivery Time Info
-- Call Delivery Agent
-- Reschedule Delivery
+- Call Delivery Agent 
+- Reschedule Delivery 
 
 Delivered Item Related
 - Damaged Item
-- Defective Item
+- Defective Item 
 - Quality Issue
-- Missing Item
-- Wrong Item
-- Quantity Issue
+- Missing Item 
+- Wrong Item 
+- Quantity Issue 
 - Other Issue
 
 Make Changes to Order
-- Update Address / Phone
-- Add / Update Items
-- Add / Update GST Details
+- Update Address / Phone 
+- Add / Update Items 
+- Add / Update GST Details 
 
-Check Refund Status
-
-Ongoing Offers & Sales
+Ongoing Offers & Sales 
 
 Website / App Related
-- App Crashing/NotLoading
+- App Crashing/NotLoading 
 - Cart Not Saving Items
-- Saved Address Not Found
-- Browser & Device Support
 - Checkout Page Not Load
-
-Account Related
-- Password Reset
 - Update Phone/Email
 - Delete Account
 - Data & Privacy Security
 - OTP / Notifications Not Received
-- View Order History
-- Create New Account
-- Manage Saved Addresses
+
 
 Inquiry
 - Franchisee
 - Dropshipping
 - Company Profile
 - Other
-Sell Product on DeoDap
-- Become a Seller
-- Know Requirements
-- Talk to Team
-
-Bulk Purchase/Wholesale
-- Bulk order inquiry
-- VIP Bulk Pricing
-	
+    
 Report Fraud
 - Payment Done to Frauder
 - Get Suspicious Call
