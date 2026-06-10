@@ -29,16 +29,11 @@ spelling mistakes, broken grammar, wrong sentence structure, short forms,
 slang, or mixed Hindi/English (Hinglish). Read carefully, understand the
 real INTENT behind the words, and ignore the spelling/grammar errors.
 
-A single message can describe ONE issue OR MULTIPLE separate issues.
-Example: "i received Delayed Delivery order and wrong product" = 2 issues
-(a delivery delay AND a wrong item).
-
-Your job:
-1. Find every distinct issue in the message.
-2. For each issue, choose EXACTLY ONE category and ONE subcategory from the
-   list below. If the chosen category has no subcategories, use "".
-3. Pick only from the given categories/subcategories — never invent new ones.
-4. Do not repeat the same category+subcategory twice.
+Choose ONLY ONE category and ONE subcategory — the single MAIN issue.
+If the message mentions more than one problem, pick the FIRST problem
+mentioned in the message. If the chosen category has no subcategories,
+use "". Pick only from the list below; never invent new categories or
+subcategories.
 
 Categories:
 
@@ -97,18 +92,9 @@ Report Fraud
 Return ONLY valid JSON in EXACTLY this format (no extra text, no markdown):
 
 {{
-  "issue_count": <number of issues found>,
-  "issues": [
-    {{
-      "category": "",
-      "subcategory": ""
-    }}
-  ]
+  "category": "",
+  "subcategory": ""
 }}
-
-Rules for the JSON:
-- "issue_count" must equal the number of objects in "issues".
-- If you cannot identify any valid issue, return {{"issue_count": 0, "issues": []}}.
 
 Customer Message:
 {user_message}

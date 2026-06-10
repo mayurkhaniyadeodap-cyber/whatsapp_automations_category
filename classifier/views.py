@@ -42,47 +42,12 @@ def classify_message(request):
     except (json.JSONDecodeError, TypeError):
         # Fall back to extracting the first {...} block from the raw text.
         match = re.search(r"\{.*\}", result or "", re.DOTALL)
-        parsed = None
         if match:
             try:
                 parsed = json.loads(match.group(0))
             except json.JSONDecodeError:
-                parsed = None
+                parsed = {"category": "Unknown", "subcategory": "Unknown"}
+        else:
+            parsed = {"category": "Unknown", "subcategory": "Unknown"}
 
-    return Response(_normalize(parsed))
-
-
-def _normalize(parsed):
-    """Coerce Gemini's output into a consistent multi-issue shape:
-
-        {"issue_count": <int>, "issues": [{"category": ..., "subcategory": ...}]}
-
-    Handles the new array format, the legacy single-object format, and any
-    malformed/empty response.
-    """
-    unknown = {"category": "Unknown", "subcategory": "Unknown"}
-
-    # New format: already has an "issues" list.
-    if isinstance(parsed, dict) and isinstance(parsed.get("issues"), list):
-        issues = [_clean_issue(i) for i in parsed["issues"] if isinstance(i, dict)]
-        return {"issue_count": len(issues), "issues": issues}
-
-    # Legacy single-object format: {"category": ..., "subcategory": ...}
-    if isinstance(parsed, dict) and "category" in parsed:
-        issue = _clean_issue(parsed)
-        return {"issue_count": 1, "issues": [issue]}
-
-    # A bare list of issues.
-    if isinstance(parsed, list):
-        issues = [_clean_issue(i) for i in parsed if isinstance(i, dict)]
-        return {"issue_count": len(issues), "issues": issues}
-
-    # Anything else (None / unparseable): report a single Unknown issue.
-    return {"issue_count": 1, "issues": [unknown]}
-
-
-def _clean_issue(issue):
-    return {
-        "category": (issue.get("category") or "Unknown").strip() or "Unknown",
-        "subcategory": (issue.get("subcategory") or "").strip(),
-    }
+    return Response(parsed)
