@@ -73,6 +73,7 @@ Inquiry
 - Franchisee
 - Dropshipping
 - Company Profile
+- Invoice
 - Other
     
 Report Fraud
